@@ -93,29 +93,6 @@ CREATE TABLE IF NOT EXISTS frais_constitution (
     montant DECIMAL(10,2) NOT NULL,
     date_frais DATE NOT NULL
 );
--- -- Table pour les apports des associés
--- CREATE TABLE apports (
---     id INT AUTO_INCREMENT PRIMARY KEY,
---     associe VARCHAR(255) NOT NULL,
---     type_apport ENUM('natures','numeraire') NOT NULL,
---     valeur DECIMAL(10,2) NOT NULL,
---     date_apport DATE NOT NULL
--- );
-
--- -- Table pour les frais de constitution
--- CREATE TABLE IF NOT EXISTS frais_constitution (
---     id INT AUTO_INCREMENT PRIMARY KEY,
---     associe VARCHAR(255) NOT NULL,
---     montant DECIMAL(10,2) NOT NULL,
---     date_frais DATE NOT NULL
--- );
--- CREATE TABLE accounts (
---     id INT AUTO_INCREMENT PRIMARY KEY,
---     code VARCHAR(10) UNIQUE NOT NULL,
---     name VARCHAR(255) NOT NULL,
---     parent_code VARCHAR(10), -- Référence au code du compte parent
---     type ENUM('Actif', 'Passif', 'Charge', 'Produit') NOT NULL
--- );
 ALTER TABLE accounts ADD COLUMN parent_code VARCHAR(50) NULL;
 INSERT INTO apports (associe, type_apport, valeur, date_apport) VALUES ('Vincent', 'numeraire', 1326, NOW());
 
